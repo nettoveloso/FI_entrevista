@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using WebAtividadeEntrevista.Validate;
 
 namespace WebAtividadeEntrevista.Models
 {
@@ -71,6 +72,7 @@ namespace WebAtividadeEntrevista.Models
         /// Telefone
         /// </summary>
         [Required]
+        [Cpf(ErrorMessage = "CPF inválido")]
         public string CPF { get; set; }
 
     }    

@@ -38,23 +38,29 @@ namespace WebAtividadeEntrevista.Controllers
             }
             else
             {
-                
-                model.Id = bo.Incluir(new Cliente()
-                {                    
-                    CEP             = model.CEP,
-                    Cidade          = model.Cidade,
-                    Email           = model.Email,
-                    Estado          = model.Estado,
-                    Logradouro      = model.Logradouro,
-                    Nacionalidade   = model.Nacionalidade,
-                    Nome            = model.Nome,
-                    Sobrenome       = model.Sobrenome,
-                    Telefone        = model.Telefone,
-                    CPF             = model.CPF
-                });
+                try
+                {
+                    model.Id = bo.Incluir(new Cliente()
+                    {
+                        CEP = model.CEP,
+                        Cidade = model.Cidade,
+                        Email = model.Email,
+                        Estado = model.Estado,
+                        Logradouro = model.Logradouro,
+                        Nacionalidade = model.Nacionalidade,
+                        Nome = model.Nome,
+                        Sobrenome = model.Sobrenome,
+                        Telefone = model.Telefone,
+                        CPF = model.CPF
+                    });
 
-           
-                return Json("Cadastro efetuado com sucesso");
+
+                    return Json("Cadastro efetuado com sucesso");
+                }catch( Exception e)
+                {
+                    return Json(e.Message);
+                }               
+                
             }
         }
 

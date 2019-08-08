@@ -14,8 +14,10 @@ namespace FI.AtividadeEntrevista.BLL
         /// <param name="cliente">Objeto de cliente</param>
         public long Incluir(DML.Cliente cliente)
         {
+            this.existeCPF(cliente);
             DAL.DaoCliente cli = new DAL.DaoCliente();
             return cli.Incluir(cliente);
+            
         }
 
         /// <summary>
@@ -77,6 +79,18 @@ namespace FI.AtividadeEntrevista.BLL
         {
             DAL.DaoCliente cli = new DAL.DaoCliente();
             return cli.VerificarExistencia(CPF);
+        }
+
+        /// <summary>
+        /// Trata o retorno do CPF
+        /// </summary>
+        /// <param name="CPF"></param>
+        private void existeCPF(DML.Cliente cliente)
+        {
+            if (this.VerificarExistencia(cliente.CPF))
+            {
+                throw new Exception("CPF já existe na base de dados");
+            }
         }
     }
 }
