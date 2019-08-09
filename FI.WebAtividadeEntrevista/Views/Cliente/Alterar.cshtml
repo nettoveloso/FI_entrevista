@@ -6,6 +6,8 @@
     <script>
         var urlPost         = '@Url.Action("Alterar", "Cliente", new { area = "" })';
         var urlPostBenef    = '@Url.Action("Incluir", "Beneficiario", new { area = "" })';
+        var urlGetBenef     = '@Url.Action("BeneficiarioList", "Beneficiario", new { area = "" })';
+        var urlPostExcBene  = '@Url.Action("Excluir", "Beneficiario", new { area = "" })'
         var obj             = @Html.Raw(Json.Encode(Model));
         var urlRetorno      = '@Url.Action("Index", "Cliente", new { area = "" })';
     </script>

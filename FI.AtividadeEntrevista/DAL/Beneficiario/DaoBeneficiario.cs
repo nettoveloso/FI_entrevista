@@ -41,6 +41,7 @@ namespace FI.AtividadeEntrevista.DAL
                 {
                     DML.Beneficiario benef = new DML.Beneficiario();
                     benef.Id        = row.Field<long>("Id");
+                    benef.Nome      = row.Field<string>("Nome");
                     benef.CPF       = row.Field<string>("CPF");
                     benef.IdCliente = row.Field<long>("Idcliente");                    
                     lista.Add(benef);
