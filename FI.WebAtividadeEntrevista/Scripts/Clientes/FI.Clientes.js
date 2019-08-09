@@ -34,6 +34,11 @@ $(document).ready(function () {
             }
         });
     })
+
+    $('#beneficiario').click(function () {
+        $('#modal_beneficiario').modal();
+        return false;
+    })
     
 })
 

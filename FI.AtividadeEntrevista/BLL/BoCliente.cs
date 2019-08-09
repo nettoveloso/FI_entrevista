@@ -89,7 +89,7 @@ namespace FI.AtividadeEntrevista.BLL
         {
             if (this.VerificarExistencia(cliente.CPF))
             {
-                throw new Exception("CPF já existe na base de dados");
+                throw new Exception($"CPF {cliente.CPF} já existe associado a outro cliente");
             }
         }
     }

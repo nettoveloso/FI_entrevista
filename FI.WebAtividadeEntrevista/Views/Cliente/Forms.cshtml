@@ -1,6 +1,7 @@
 ﻿
 
 <form id="formCadastro" method="post">
+    <input type="hidden" id="IDCLIENTE" value="" />
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
@@ -81,6 +82,15 @@
 
     <div class="row">
         <div class="col-lg-12">
+            <div class="pull-left">
+                <button id="beneficiario" class="btn btn-sm btn-default">Beneficiários</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12">
             <div class="pull-right">
                 <button type="submit" class="btn btn-sm btn-success">Salvar</button>
                 @Html.ActionLink("Voltar", "Index", "Cliente", new { }, new { @class = "btn btn-sm btn-danger" })
@@ -88,3 +98,5 @@
         </div>
     </div>
 </form>
+
+@Html.Partial("Beneficiario")

@@ -1,5 +1,11 @@
 ﻿
 $(document).ready(function () {
+
+    $('#beneficiario').click(function () {
+        $('#modal_beneficiario').modal();
+        return false;
+    })
+
     if (obj) {
         $('#formCadastro #Nome').val(obj.Nome);
         $('#formCadastro #CEP').val(obj.CEP);
@@ -11,6 +17,7 @@ $(document).ready(function () {
         $('#formCadastro #Cidade').val(obj.Cidade);
         $('#formCadastro #Logradouro').val(obj.Logradouro);
         $('#formCadastro #Telefone').val(obj.Telefone);
+        $('#formCadastro #IDCLIENTE').val(obj.Id);
     }
 
     $('#formCadastro').submit(function (e) {

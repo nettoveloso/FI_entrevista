@@ -69,7 +69,7 @@ namespace WebAtividadeEntrevista.Models
         public string Telefone { get; set; }
 
         /// <summary>
-        /// Telefone
+        /// CPF
         /// </summary>
         [Required]
         [Cpf(ErrorMessage = "CPF inválido")]
